@@ -36,7 +36,7 @@ const start = async () => {
         console.log('useeeeer', JSON.stringify(user, null, 2))
           await bot.sendMessage(chatId, `Добро пожаловать!`);
         //   await bot.sendSticker(chatId, 'https://avatars.cloudflare.steamstatic.com/b507fb8a40ac9ff4e344b89988ec222825e23a34_full.jpg')
-          if(!user?.chatId) {
+          if(!user || !user.chatId) {
               await UserModel.create({ chatId });
           }
           return null
